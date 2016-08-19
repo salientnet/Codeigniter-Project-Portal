@@ -13,8 +13,8 @@ foreach($custom_fields as $field){
     $i++;
 }
 
-$where = '';
-$where = 'WHERE contractid= "'.$rel_id.'"';
+$where = array();
+array_push($where, 'WHERE contractid = "' . $rel_id . '"');
 if(count($custom_fields) > 4){
     @$this->_instance->db->query('SET SQL_BIG_SELECTS=1');
 }
